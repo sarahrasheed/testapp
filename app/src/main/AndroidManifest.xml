@@ -35,7 +35,7 @@
 
         <activity
             android:name=".AddStudentActivity"
-            android:exported="true"
+            android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
