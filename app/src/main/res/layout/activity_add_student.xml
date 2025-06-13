@@ -22,12 +22,12 @@
             android:textStyle="bold" />
 
         <!-- Student Form -->
-        <EditText
-            android:id="@+id/etStudentId"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Student ID"
-            android:inputType="number" />
+<!--        <EditText-->
+<!--            android:id="@+id/etStudentId"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="Student ID"-->
+<!--            android:inputType="number" />-->
 
         <EditText
             android:id="@+id/etFullName"
