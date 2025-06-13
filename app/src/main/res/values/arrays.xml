@@ -7,8 +7,8 @@
         <item>Business Administration</item>
     </string-array>
     <string-array name="classes_array">
-        <item>1A</item>
-        <item>2B</item>
-        <item>3C</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
     </string-array>
 </resources>

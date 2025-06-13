@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/lavender_web">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Student List"
+        android:textSize="24sp"
+        android:textColor="@color/violet_blue"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:textStyle="bold"/>
+
+    <ListView
+        android:id="@+id/studentListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@color/jordy_blue"
+        android:dividerHeight="1dp"/>
+</LinearLayout>

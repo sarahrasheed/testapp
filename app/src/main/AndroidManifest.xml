@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -28,14 +29,15 @@
 
         <activity
             android:name=".RegistrarActivity"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/registrar_dashboard"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
         <activity
             android:name=".AddStudentActivity"
-            android:exported="false"
+            android:parentActivityName=".RegistrarActivity"
+            android:exported="true"
             android:screenOrientation="portrait" />
 
         <activity

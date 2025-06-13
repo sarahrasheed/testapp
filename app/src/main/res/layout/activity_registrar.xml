@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/lavender_web"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="24dp"
+        android:text="@string/registrar_dashboard"
+        android:textColor="@color/violet_blue"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnAddStudent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@color/violet_blue"
+        android:text="@string/add_student"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/btnViewStudent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@color/violet_blue"
+        android:text="@string/view_students"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/btnManageSubjects"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@color/saffron"
+        android:text="@string/manage_subjects"
+        android:textColor="@color/black" />
+
+    <Button
+        android:id="@+id/btnBuildSchedules"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/jordy_blue"
+        android:text="@string/build_schedules"
+        android:textColor="@color/black" />
+</LinearLayout>
