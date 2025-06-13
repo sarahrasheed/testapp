@@ -1,23 +1,21 @@
 package com.example.testapp;
 
-import java.io.Serializable;
-
-public class Student implements Serializable {
+public class Teacher {
     private int id;
     private String name;
     private String email;
-    private int classId;
+    private String password;
 
-    public Student(int id, String name, String email, int classId) {
+    public Teacher(int id, String name, String email, String password) {
         this.id = id;
         this.name = name;
         this.email = email;
-        this.classId = classId;
+        this.password = password;
     }
 
-    // Getters and Setters
+    // Getters
     public int getId() { return id; }
     public String getName() { return name; }
     public String getEmail() { return email; }
-    public int getClassId() { return classId; }
+    public String getPassword() { return password;}
 }

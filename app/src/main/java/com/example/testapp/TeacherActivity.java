@@ -3,6 +3,7 @@ package com.example.testapp;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -24,36 +25,38 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class StudentListActivity extends AppCompatActivity {
-    private ListView studentListView;
-    private StudentAdapter adapter;
-    private List<Student> students = new ArrayList<>();
+public class TeacherActivity extends AppCompatActivity {
+    private ListView teacherListView;
+    private TeacherAdapter adapter;
+    private List<Teacher> teachers = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_student_list);
+        setContentView(R.layout.activity_teacher);
 
         // Initialize views
-        studentListView = findViewById(R.id.studentListView);
+        teacherListView = findViewById(R.id.teacherListView);
         ImageButton btnBack = findViewById(R.id.btnBack);
         btnBack.setOnClickListener(v -> onBackPressed());
 
         // Set up adapter
-        adapter = new StudentAdapter(this, students);
-        studentListView.setAdapter(adapter);
+        adapter = new TeacherAdapter(this, teachers);
+        teacherListView.setAdapter(adapter);
 
         // Set click listeners
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
+
+
         // Load student data
-        loadStudents();
+        loadTeachers();
     }
 
-    private void loadStudents() {
-        String url = "http://10.0.2.2/school_api/get_students.php";
+    private void loadTeachers() {
+        String url = "http://10.0.2.2/school_api/get_teachers.php";
 
         JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.GET,
@@ -62,23 +65,23 @@ public class StudentListActivity extends AppCompatActivity {
                 response -> {
                     try {
                         if (response.getString("status").equals("success")) {
-                            students.clear();
-                            JSONArray studentsArray = response.getJSONArray("students");
-                            for (int i = 0; i < studentsArray.length(); i++) {
-                                JSONObject studentObj = studentsArray.getJSONObject(i);
-                                students.add(new Student(
-                                        studentObj.getInt("id"),
-                                        studentObj.getString("name"),
-                                        studentObj.getString("email"),
-                                        studentObj.getInt("class_id")
+                            teachers.clear();
+                            JSONArray teachersArray = response.getJSONArray("teachers");
+                            for (int i = 0; i < teachersArray.length(); i++) {
+                                JSONObject teacherObj = teachersArray.getJSONObject(i);
+                                teachers.add(new Teacher(
+                                        teacherObj.getInt("id"),
+                                        teacherObj.getString("name"),
+                                        teacherObj.getString("email"),
+                                        teacherObj.getString("password")
                                 ));
                             }
                             adapter.notifyDataSetChanged();
                         } else {
-                            showError(response.optString("message", "Failed to load students"));
+                            showError(response.optString("message", "Failed to load teachers"));
                         }
                     } catch (JSONException e) {
-                        showError("Error parsing student data");
+                        showError("Error parsing teacher data");
                         Log.e("API", "JSON parsing error", e);
                     }
                 },
@@ -101,23 +104,23 @@ public class StudentListActivity extends AppCompatActivity {
         Volley.newRequestQueue(this).add(request);
     }
 
-    public void deleteStudent(int studentId) {
-        String url = "http://10.0.2.2/school_api/delete_student.php";
+    public void deleteTeacher(int teacherId) {
+        String url = "http://10.0.2.2/school_api/delete_teacher.php";
 
         // Show loading indicator
         ProgressDialog progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Deleting student...");
+        progressDialog.setMessage("Deleting teacher...");
         progressDialog.setCancelable(false);
         progressDialog.show();
 
         try {
             // Create JSON payload
             JSONObject jsonBody = new JSONObject();
-            jsonBody.put("student_id", studentId); // Must match PHP expected parameter
+            jsonBody.put("teacher_id", teacherId); // Must match PHP expected parameter
 
             // Log the request for debugging
             Log.d("DELETE_REQUEST", "Endpoint: " + url);
-            Log.d("DELETE_REQUEST", "Student ID: " + studentId);
+            Log.d("DELETE_REQUEST", "Teacher ID: " + teacherId);
             Log.d("DELETE_REQUEST", "Request Body: " + jsonBody.toString());
 
             JsonObjectRequest request = new JsonObjectRequest(
@@ -132,8 +135,8 @@ public class StudentListActivity extends AppCompatActivity {
                             if (response.has("status") && response.getString("status").equals("success")) {
                                 // Success case
                                 runOnUiThread(() -> {
-                                    Toast.makeText(this, "Student deleted successfully", Toast.LENGTH_SHORT).show();
-                                    loadStudents(); // Refresh the list
+                                    Toast.makeText(this, "teacher deleted successfully", Toast.LENGTH_SHORT).show();
+                                    loadTeachers(); // Refresh the list
                                 });
                             } else {
                                 // Server returned error

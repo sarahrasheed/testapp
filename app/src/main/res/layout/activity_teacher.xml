@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Student List"
+        android:text="Teacher List"
         android:textSize="24sp"
         android:textColor="@color/violet_blue"
         android:layout_gravity="center_horizontal"
@@ -24,8 +24,14 @@
         android:contentDescription="Back"
         android:background="?attr/selectableItemBackgroundBorderless" />
 
+    <Button
+        android:id="@+id/btnAddTeacher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Teacher"/>
+
     <ListView
-        android:id="@+id/studentListView"
+        android:id="@+id/teacherListView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:divider="@color/jordy_blue"

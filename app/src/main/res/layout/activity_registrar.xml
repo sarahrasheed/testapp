@@ -35,6 +35,15 @@
         android:textColor="@color/white" />
 
     <Button
+        android:id="@+id/btnTeachers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@color/violet_blue"
+        android:text="@string/teachers"
+        android:textColor="@color/white" />
+
+    <Button
         android:id="@+id/btnManageSubjects"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -41,14 +41,33 @@
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".ManageSubjectsActivity"
-            android:exported="false"
+            android:name=".SubjectListActivity"
+            android:parentActivityName=".RegistrarActivity"
+            android:exported="true"
             android:screenOrientation="portrait" />
 
         <activity
             android:name=".ScheduleBuilderActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".StudentListActivity"
+            android:parentActivityName=".RegistrarActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".EditStudentActivity"
+            android:parentActivityName=".StudentListActivity"
+            android:exported="true"
+            />
+
+        <activity
+            android:name=".TeacherActivity"
+            android:parentActivityName=".RegistrarActivity"
+            android:exported="true"
+            />
 
     </application>
 

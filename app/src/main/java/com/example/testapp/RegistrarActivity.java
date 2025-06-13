@@ -14,6 +14,7 @@ public class RegistrarActivity extends AppCompatActivity {
 
         // Initialize buttons
         Button btnAddStudent = findViewById(R.id.btnAddStudent);
+        Button btnTeachers = findViewById(R.id.btnTeachers);
         Button btnManageSubjects = findViewById(R.id.btnManageSubjects);
         Button btnBuildSchedules = findViewById(R.id.btnBuildSchedules);
         Button btnViewStudent = findViewById(R.id.btnViewStudent);
@@ -29,8 +30,13 @@ public class RegistrarActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+        btnTeachers.setOnClickListener(v -> {
+            Intent intent = new Intent(RegistrarActivity.this, TeacherActivity.class);
+            startActivity(intent);
+        });
+
         btnManageSubjects.setOnClickListener(v -> {
-            Intent intent = new Intent(RegistrarActivity.this, ManageSubjectsActivity.class);
+            Intent intent = new Intent(RegistrarActivity.this, SubjectListActivity.class);
             startActivity(intent);
         });
 
