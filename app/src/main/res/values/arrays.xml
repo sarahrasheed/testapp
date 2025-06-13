@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="programs_array">
+        <item>Computer Science</item>
+        <item>Electrical Engineering</item>
+        <item>Mechanical Engineering</item>
+        <item>Business Administration</item>
+    </string-array>
+    <string-array name="classes_array">
+        <item>1A</item>
+        <item>2B</item>
+        <item>3C</item>
+    </string-array>
+</resources>
