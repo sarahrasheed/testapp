@@ -17,22 +17,22 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/btnAddStudent"
+        android:id="@+id/btnStudent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:background="@color/violet_blue"
-        android:text="@string/add_student"
+        android:text="@string/student"
         android:textColor="@color/white" />
 
-    <Button
-        android:id="@+id/btnViewStudent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:background="@color/violet_blue"
-        android:text="@string/view_students"
-        android:textColor="@color/white" />
+<!--    <Button-->
+<!--        android:id="@+id/btnViewStudent"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginBottom="16dp"-->
+<!--        android:background="@color/violet_blue"-->
+<!--        android:text="@string/view_students"-->
+<!--        android:textColor="@color/white" />-->
 
     <Button
         android:id="@+id/btnTeachers"

@@ -47,29 +47,16 @@ public class StudentAdapter extends ArrayAdapter<Student> {
 
         // Set button click listeners
         btnEdit.setOnClickListener(v -> {
-            try {
-                Intent intent = new Intent(context, EditStudentActivity.class);
-                // Pass all required data
-                intent.putExtra("STUDENT_ID", currentStudent.getId());
-                intent.putExtra("STUDENT_NAME", currentStudent.getName());
-                intent.putExtra("STUDENT_EMAIL", currentStudent.getEmail());
-                intent.putExtra("STUDENT_CLASS_ID", currentStudent.getClassId());
+            // Get the parent activity
+            StudentActivity activity = (StudentActivity) context;
 
-                // Add debug logging
-                Log.d("ADAPTER", "Passing student data: " +
-                        "ID=" + currentStudent.getId() +
-                        ", Name=" + currentStudent.getName());
-
-                context.startActivity(intent);
-            } catch (Exception e) {
-                Log.e("ADAPTER", "Edit click error", e);
-                Toast.makeText(context, "Error: " + e.getMessage(), Toast.LENGTH_LONG).show();
-            }
+            // Call the showEditDialog method directly
+            activity.showEditDialog(currentStudent);
         });
 
         btnDelete.setOnClickListener(v -> {
-            if (context instanceof StudentListActivity) {
-                ((StudentListActivity) context).deleteStudent(currentStudent.getId());
+            if (context instanceof StudentActivity) {
+                ((StudentActivity) context).deleteStudent(currentStudent.getId());
             }
         });
 

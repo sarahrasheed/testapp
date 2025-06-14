@@ -70,6 +70,7 @@ public class StudentListActivity extends AppCompatActivity {
                                         studentObj.getInt("id"),
                                         studentObj.getString("name"),
                                         studentObj.getString("email"),
+                                        studentObj.getString("password"),
                                         studentObj.getInt("class_id")
                                 ));
                             }

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">School System</string>
     <string name="registrar_dashboard">Registrar Dashboard</string>
-    <string name="add_student">Add New Student</string>
+    <string name="student"> Students</string>
     <string name="manage_subjects">Manage Subjects</string>
     <string name="build_schedules">Build Schedules</string>
     <string name="view_students">View Students</string>

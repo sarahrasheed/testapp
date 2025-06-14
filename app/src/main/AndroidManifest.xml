@@ -69,6 +69,12 @@
             android:exported="true"
             />
 
+        <activity
+            android:name=".StudentActivity"
+            android:parentActivityName=".RegistrarActivity"
+            android:exported="true"
+            />
+
     </application>
 
 </manifest>

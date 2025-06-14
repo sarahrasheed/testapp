@@ -13,22 +13,22 @@ public class RegistrarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_registrar);
 
         // Initialize buttons
-        Button btnAddStudent = findViewById(R.id.btnAddStudent);
+        Button btnStudent = findViewById(R.id.btnStudent);
         Button btnTeachers = findViewById(R.id.btnTeachers);
         Button btnManageSubjects = findViewById(R.id.btnManageSubjects);
         Button btnBuildSchedules = findViewById(R.id.btnBuildSchedules);
-        Button btnViewStudent = findViewById(R.id.btnViewStudent);
+//        Button btnViewStudent = findViewById(R.id.btnViewStudent);
 
         // Set click listeners
-        btnAddStudent.setOnClickListener(v -> {
-            Intent intent = new Intent(RegistrarActivity.this, AddStudentActivity.class);
+        btnStudent.setOnClickListener(v -> {
+            Intent intent = new Intent(RegistrarActivity.this, StudentActivity.class);
             startActivity(intent);
         });
 
-        btnViewStudent.setOnClickListener(v -> {
-            Intent intent = new Intent(RegistrarActivity.this, StudentListActivity.class);
-            startActivity(intent);
-        });
+//        btnViewStudent.setOnClickListener(v -> {
+//            Intent intent = new Intent(RegistrarActivity.this, StudentListActivity.class);
+//            startActivity(intent);
+//        });
 
         btnTeachers.setOnClickListener(v -> {
             Intent intent = new Intent(RegistrarActivity.this, TeacherActivity.class);
